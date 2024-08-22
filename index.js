@@ -9,8 +9,9 @@ const helmet = require('helmet');
 app.use(express.json());
 app.use(cookieParser());
 const corsOptions = {
-  origin: 'http://localhost:3000', // Allow only this origin
-  credentials: true, // Allow credentials to be sent
+  origin: '*',
+  methods: 'GET,HEAD,PUT,PATCH,POST,DELETE', 
+  credentials: true, 
 };
 app.use(cors(corsOptions))
 
