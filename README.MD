@@ -71,9 +71,9 @@ Contributions are welcome! If you would like to contribute to this project, plea
 
 ## Deployment
 
-The backend of this project is deployed on Vercel. You can access it [here](https://event-ease-api.vercel.app).
+The backend of this project is deployed on Vercel. You can access it [here](https://event-sigma-mauve.vercel.app).
 
-**Production Deployment:** https://event-ease-api.vercel.app
+**Production Deployment:** https://event-sigma-mauve.vercel.app
 
 
 
