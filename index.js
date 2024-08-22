@@ -9,7 +9,7 @@ const helmet = require('helmet');
 app.use(express.json());
 app.use(cookieParser());
 const corsOptions = {
-  origin: 'http://localhost:3000',
+  origin: ['http://localhost:3000','*'],
   methods: 'GET,HEAD,PUT,PATCH,POST,DELETE', 
   credentials: true, 
 };
