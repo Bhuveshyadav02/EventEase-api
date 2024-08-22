@@ -2,7 +2,7 @@
     "version": 2,
     "builds": [
       {
-        "src": "index.js",
+        "src": "./index.js",
         "use": "@vercel/node"
       }
     ],
@@ -11,15 +11,6 @@
         "src": "/(.*)",
         "dest": "/index.js"
       }
-    ],
-    "env": {
-      "SECRET_KEY": "@secret_key",
-      "SENDER_EMAIL": "@sender_email",
-      "SENDER_PASSWORD": "@sender_password",
-      "ADMIN_EMAIL": "@admin_email",
-      "CLIENT_URL": "@client_url",
-      "HOD_FEATURE": "@hod_feature",
-      "MONGODB": "@mongodb"
-    }
+    ]
   }
   

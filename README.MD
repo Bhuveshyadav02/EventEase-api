@@ -69,6 +69,11 @@ Contributions are welcome! If you would like to contribute to this project, plea
 4. Push your changes to your forked repository.
 5. Submit a pull request with a detailed description of your changes.
 
+## Deployment
+
+The backend of this project is deployed on Vercel. You can access it [here](https://event-ease-api.vercel.app).
+
+**Production Deployment:** https://event-ease-api.vercel.app
 
 
 
