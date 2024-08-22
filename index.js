@@ -22,16 +22,17 @@ app.set("trust proxy", 1);
 app.use(helmet());
 app.use(helmet.contentSecurityPolicy({
   directives: {
-    defaultSrc: ["'self'"], // Allow resources from the same origin
-    scriptSrc: ["'self'"],  // Allow scripts from the same origin
-    styleSrc: ["'self'", "https://fonts.googleapis.com"], // Allow styles from the same origin and Google Fonts
-    fontSrc: ["'self'", "https://fonts.gstatic.com"], // Allow fonts from the same origin and Google Fonts
-    imgSrc: ["'self'", "data:"], // Allow images from the same origin and data URIs
-    connectSrc: ["'self'", "http://localhost:5000"], // Allow connecting to self and API server
-    objectSrc: ["'none'"], // Disallow Flash, etc.
-    upgradeInsecureRequests: [], // Automatically upgrade HTTP requests to HTTPS
+    defaultSrc: ["'self'"],
+    scriptSrc: ["'self'"],
+    styleSrc: ["'self'", "https://fonts.googleapis.com"],
+    fontSrc: ["'self'", "https://fonts.gstatic.com"],
+    imgSrc: ["'self'", "data:"],
+    connectSrc: ["'self'", "*",  "http://localhost:3000" ], // Allow connections from any origin
+    objectSrc: ["'none'"],
+    upgradeInsecureRequests: [],
   }
 }));
+
 
 // Import and use routes
 const authRouter = require("./routes/authRoutes");
@@ -49,7 +50,8 @@ const start = async () => {
   try {
     await connectDB(); // Ensure to await the database connection
     console.log("Database Connected");
-    app.listen(5000, () => {
+    const PORT = process.env.PORT || 5000;
+    app.listen(PORT, () => {
       console.log("Server Started at Port 5000");
     });
   } catch (error) {
